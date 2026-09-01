@@ -1,0 +1,26 @@
+title: Aistear
+tagline: "A Journey of Nurturing Future Leaders of the Ummah"
+description: >-
+  Aistear is an Islamic education institute in Lahore, Pakistan, offering Quran
+  memorization, Islamic foundations, creative writing, STEM, and character-development
+  programs for children through six program streams.
+url: "https://aistearedu.org"
+baseurl: ""
+
+whatsapp_number: "923005687639"
+phone_display: "+92 300 5687639"
+email: "aistearedu@proton.me"
+address: "19-K DHA Phase 1, Lahore, Pakistan"
+linkedin: "https://www.linkedin.com/company/aistear/"
+
+permalink: pretty
+
+defaults:
+  - scope:
+      path: "programs"
+    values:
+      layout: "program-stream"
+
+exclude:
+  - README.md
+  - aistear-build-brief.md

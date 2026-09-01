@@ -1,0 +1,143 @@
+---
+layout: default
+title: Home
+description: "Aistear is an Islamic education institute in Lahore offering Quran memorization, Islamic foundations, creative writing, STEM, and character-development programs for children."
+---
+
+<section class="hero">
+  <video class="hero-video" autoplay muted loop playsinline preload="auto" aria-hidden="true">
+    <source src="{{ '/assets/video/hero.mp4' | relative_url }}" type="video/mp4">
+  </video>
+  <div class="hero-scrim" aria-hidden="true"></div>
+  <div class="hero-inner">
+    <img src="{{ '/assets/img/A-logo.svg' | relative_url }}" alt="Aistear logo" class="hero-mark">
+    <h1>Aistear</h1>
+    <p class="hero-tagline">{{ site.tagline }}</p>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container two-col">
+    <div>
+      <p class="eyebrow">About Us</p>
+      <h2>Aistear — the Gaelic word for "journey" — profoundly reflects our core value of lifelong learning.</h2>
+      <p>We are rooted in an Islamic worldview and committed to nurturing each child's unique fitrah in a space filled with creativity, curiosity, and companionship. We aim to support every learner's individual growth by helping them strengthen their bond with Allah (SWT) and flourish as future leaders who love and live the Quran with excellence (Ihsan).</p>
+      <a href="{{ '/about/' | relative_url }}" class="stream-link">Read our story <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+    </div>
+    <div>
+      <!-- CLIENT TODO (brief §10): confirm current stats — cohorts/programs/educators/students -->
+      <div class="stats-grid">
+        <div class="stat-card reveal" style="transition-delay: 0ms;">
+          <div class="stat-icon"><i class="fa-solid fa-layer-group" aria-hidden="true"></i></div>
+          <div class="stat-number"><span class="stat-count" data-target="6">0</span></div>
+          <div class="stat-label">Program Streams</div>
+        </div>
+        <div class="stat-card reveal" style="transition-delay: 90ms;">
+          <div class="stat-icon"><i class="fa-solid fa-calendar-check" aria-hidden="true"></i></div>
+          <div class="stat-number"><span class="stat-count" data-target="3">0</span></div>
+          <div class="stat-label">Cohorts</div>
+        </div>
+        <div class="stat-card reveal" style="transition-delay: 180ms;">
+          <div class="stat-icon"><i class="fa-solid fa-chalkboard-user" aria-hidden="true"></i></div>
+          <div class="stat-number"><span class="stat-count" data-target="5">0</span></div>
+          <div class="stat-label">Educators</div>
+        </div>
+        <div class="stat-card reveal" style="transition-delay: 270ms;">
+          <div class="stat-icon"><i class="fa-solid fa-face-smile" aria-hidden="true"></i></div>
+          <div class="stat-number"><span class="stat-count" data-target="30">0</span>+</div>
+          <div class="stat-label">Happy Students</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-light torn-top" id="programs">
+  {% include paper-tear.html %}
+  <div class="arabic-fall-layer" data-arabic-fall aria-hidden="true"></div>
+  <div class="container">
+    <div class="section-heading">
+      <p class="eyebrow">Aistear</p>
+      <h2>Six Program Streams, One Journey</h2>
+      <p>Each stream nurtures a different dimension of your child's growth — Quran, character, expression, and inquiry.</p>
+    </div>
+    <div class="stream-grid">
+      {% for program in site.data.programs %}
+      <div class="stream-card reveal" style="--card-accent: {{ program.accent }}; transition-delay: {{ forloop.index0 | times: 90 }}ms;">
+        <div class="stream-icon-wrap">
+          <i class="fa-solid {{ program.icon }} stream-icon" aria-hidden="true"></i>
+        </div>
+        <h3>{{ program.name }}</h3>
+        <p>{{ program.summary }}</p>
+        <a class="stream-link" href="{{ '/programs/' | append: program.slug | append: '/' | relative_url }}">Learn more <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section id="feature">
+  <div class="container two-col">
+    <div>
+      <p class="eyebrow">Why Choose Us?</p>
+      <h2>Why You Should Start Learning with Us</h2>
+      <div class="feature-list">
+        <div class="feature-item">
+          <div class="feature-icon"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i></div>
+          <div>
+            <h4>Certified Educators</h4>
+            <p>Our team combines formal pedagogical training with Islamic scholarship, so every session is both rigorous and rooted.</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon"><i class="fa-solid fa-certificate" aria-hidden="true"></i></div>
+          <div>
+            <h4>Child-Led Education</h4>
+            <p>We design around each child's pace and curiosity rather than a one-size-fits-all curriculum.</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon"><i class="fa-solid fa-book-open-reader" aria-hidden="true"></i></div>
+          <div>
+            <h4>21st Century Skills</h4>
+            <p>From robotics to public speaking, our programs build the practical skills today's learners need alongside their deen.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <img src="{{ '/assets/img/A-logo.svg' | relative_url }}" alt="Aistear geometric emblem" style="max-width:280px;margin:0 auto;display:block;">
+    </div>
+  </div>
+</section>
+
+<section class="bg-light" id="testimonial">
+  <div class="container">
+    <div class="section-heading">
+      <p class="eyebrow">Testimonials</p>
+      <h2>What Our Families Say</h2>
+    </div>
+    <!-- Existing testimonials from the live site, already published with names attached.
+         CLIENT TODO (brief §8): confirm written consent is on file before adding any future testimonial. -->
+    <div class="testimonial-grid">
+      <div class="testimonial-card reveal" style="transition-delay: 0ms;">
+        <i class="fa-solid fa-quote-left" aria-hidden="true"></i>
+        <p>Sed et elitr ipsum labore dolor diam, ipsum duo vero sed sit est est ipsum eos clita est ipsum. Est nonumy tempor at kasd.</p>
+        <div class="testimonial-author">Abdur Rehman<span>Maktab Cohort 1</span></div>
+      </div>
+      <div class="testimonial-card reveal" style="transition-delay: 90ms;">
+        <i class="fa-solid fa-quote-left" aria-hidden="true"></i>
+        <p>Sed et elitr ipsum labore dolor diam, ipsum duo vero sed sit est est ipsum eos clita est ipsum. Est nonumy tempor at kasd.</p>
+        <div class="testimonial-author">Hadi<span>Maktab Cohort 2</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-navy" id="contact">
+  <div class="container" style="text-align:center;">
+    <h2>Ready to Begin the Journey?</h2>
+    <p style="max-width:520px;margin:0 auto 28px;opacity:0.9;">Message us on WhatsApp to enroll your child or ask any questions about our programs.</p>
+    {% include cta-whatsapp.html text="Enroll on WhatsApp" class="btn-lg" %}
+  </div>
+</section>

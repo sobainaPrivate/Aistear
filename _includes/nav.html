@@ -1,0 +1,34 @@
+<header class="site-header">
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a href="{{ '/' | relative_url }}" class="brand">
+        <img src="{{ '/assets/img/A-logo.svg' | relative_url }}" alt="Aistear logo" class="brand-mark">
+        <span class="brand-word">Aistear</span>
+      </a>
+
+      <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <div class="nav-menu" id="nav-menu">
+        <ul class="nav-links">
+          <li><a href="{{ '/' | relative_url }}">Home</a></li>
+          <li><a href="{{ '/about/' | relative_url }}">About</a></li>
+          <li class="has-dropdown">
+            <a href="{{ '/programs/' | relative_url }}">Programs <i class="fa-solid fa-chevron-down" aria-hidden="true"></i></a>
+            <ul class="dropdown">
+              {% for program in site.data.programs %}
+              <li><a href="{{ '/programs/' | append: program.slug | append: '/' | relative_url }}">{{ program.name }}</a></li>
+              {% endfor %}
+            </ul>
+          </li>
+          <li><a href="{{ '/admissions/' | relative_url }}">Admissions</a></li>
+          <li><a href="{{ '/faculty/' | relative_url }}">Faculty</a></li>
+          <li><a href="{{ '/gallery/' | relative_url }}">Gallery</a></li>
+          <li><a href="{{ '/contact/' | relative_url }}">Contact</a></li>
+        </ul>
+        {% include cta-whatsapp.html class="btn-nav" %}
+      </div>
+    </div>
+  </nav>
+</header>

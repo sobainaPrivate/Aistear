@@ -1,0 +1,48 @@
+<footer class="site-footer">
+  <div class="footer-main">
+    <div class="footer-col footer-brand">
+      <a href="{{ '/' | relative_url }}" class="brand brand-footer">
+        <img src="{{ '/assets/img/A-logo.svg' | relative_url }}" alt="Aistear logo" class="brand-mark">
+        <span class="brand-word">Aistear</span>
+      </a>
+      <p>{{ site.tagline }}</p>
+    </div>
+
+    <div class="footer-col">
+      <h3>Get in Touch</h3>
+      <p><i class="fa-solid fa-location-dot" aria-hidden="true"></i> {{ site.address }}</p>
+      <p><i class="fa-solid fa-phone" aria-hidden="true"></i> {{ site.phone_display }}</p>
+      <p><i class="fa-solid fa-envelope" aria-hidden="true"></i> {{ site.email }}</p>
+      <div class="footer-social">
+        <a href="{{ site.linkedin }}" target="_blank" rel="noopener" aria-label="Aistear on LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h3>Our Programs</h3>
+      <ul class="footer-links">
+        {% for program in site.data.programs %}
+        <li><a href="{{ '/programs/' | append: program.slug | append: '/' | relative_url }}">{{ program.name }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h3>Quick Links</h3>
+      <ul class="footer-links">
+        <li><a href="{{ '/about/' | relative_url }}">About</a></li>
+        <li><a href="{{ '/admissions/' | relative_url }}">Admissions</a></li>
+        <li><a href="{{ '/faculty/' | relative_url }}">Faculty</a></li>
+        <li><a href="{{ '/gallery/' | relative_url }}">Gallery</a></li>
+        <li><a href="{{ '/contact/' | relative_url }}">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; {{ site.time | date: '%Y' }} Aistear. All rights reserved.</p>
+  </div>
+</footer>
+
+<a href="#top" class="back-to-top" aria-label="Back to top"><i class="fa-solid fa-angle-up" aria-hidden="true"></i></a>
+<script src="{{ '/assets/js/main.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>

@@ -1,0 +1,62 @@
+---
+layout: default
+---
+{% assign program = site.data.programs | where: "slug", page.slug | first %}
+
+<section class="stream-hero" style="--hero-accent: {{ program.accent }};">
+  <div class="container">
+    <p class="eyebrow">Program Stream</p>
+    <h1><span class="stream-hero-icon"><i class="fa-solid {{ program.icon }}" aria-hidden="true"></i></span> {{ program.name }}</h1>
+    <p class="stream-summary">{{ program.summary }}</p>
+    <p class="stream-focus"><strong>Focus:</strong> {{ program.focus }}</p>
+  </div>
+</section>
+
+<div class="container stream-body">
+  {{ content }}
+
+  {% if program.ongoing_programs and program.ongoing_programs.size > 0 %}
+  <section class="stream-section">
+    <h2>Ongoing Programs</h2>
+    <div class="card-grid">
+      {% for p in program.ongoing_programs %}
+      <div class="offering-card reveal" style="transition-delay: {{ forloop.index0 | times: 90 }}ms;">
+        <h3>{{ p.name }}</h3>
+        {% if p.ages %}<p class="offering-meta"><i class="fa-solid fa-child" aria-hidden="true"></i> Ages {{ p.ages }}</p>{% endif %}
+        {% if p.schedule %}<p class="offering-meta"><i class="fa-regular fa-clock" aria-hidden="true"></i> {{ p.schedule }}</p>{% endif %}
+        <p class="offering-fee">
+          {% if p.fee %}{{ p.fee }}{% else %}Contact us on WhatsApp for current fee details{% endif %}
+        </p>
+        {% include cta-whatsapp.html text="Enroll on WhatsApp" message=p.name %}
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+
+  {% if program.workshops and program.workshops.size > 0 %}
+  <section class="stream-section">
+    <h2>Workshops &amp; Camps</h2>
+    <div class="card-grid">
+      {% for w in program.workshops %}
+      <div class="offering-card offering-card-light reveal" style="transition-delay: {{ forloop.index0 | times: 90 }}ms;">
+        <h3>{{ w.name }}</h3>
+        {% if w.cadence %}<p class="offering-meta"><i class="fa-solid fa-calendar" aria-hidden="true"></i> {{ w.cadence | capitalize }}</p>{% endif %}
+        {% include cta-whatsapp.html text="Register" message=w.name class="btn-outline" %}
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+
+  {% if program.past_programs and program.past_programs.size > 0 %}
+  <section class="stream-section">
+    <h2>Past Programs</h2>
+    <ul class="past-list">
+      {% for pp in program.past_programs %}
+      <li>{{ pp.name }}</li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+</div>

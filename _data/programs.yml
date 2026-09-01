@@ -1,0 +1,98 @@
+# CLIENT TODO: fees are set to `null` wherever the brief marked them TODO.
+# Pages fall back to "Contact us on WhatsApp for current fee details" when fee is null.
+# Fill in real numbers here once confirmed and they'll appear on every page automatically.
+
+- slug: tarteel
+  name: Tarteel
+  icon: fa-book-quran
+  accent: "#FB8629"
+  summary: Hifdh program using the Muratania Method
+  focus: Memorization, loah writing, reflective tafseer
+  ongoing_programs:
+    - name: Tarteel (Hifdh)
+      ages: "8–12"
+      schedule: "Tue/Thu/Sat, 4–6pm"
+      fee: null
+  workshops: []
+  past_programs: []
+
+- slug: tasdeed
+  name: Tasdeed
+  icon: fa-book-open-reader
+  accent: "#1B3B5A"
+  summary: Nazra and Islamic foundations
+  focus: Quran reading (Nazra), Islamic foundations
+  ongoing_programs:
+    - name: Tasdeed
+      ages: "6–9"
+      schedule: "Tue/Thu/Sat, 4–6pm"
+      fee: null
+  workshops: []
+  past_programs: []
+
+- slug: bayaan
+  name: Bayaan
+  icon: fa-feather-pointed
+  accent: "#E07016"
+  summary: "Art of Expression and Communication"
+  focus: Writing, speaking, art, storytelling
+  ongoing_programs:
+    - name: Creative Writing
+      fee: null
+    - name: Calligraphy
+      fee: null
+  workshops:
+    - name: Oratory (public speaking)
+      cadence: workshop
+    - name: Arz o Sama (painting)
+      cadence: workshop
+    - name: Story Hour
+      cadence: monthly
+    - name: Readers Retreat
+      cadence: null
+  past_programs: []
+
+- slug: tahqeeq
+  name: Tahqeeq
+  icon: fa-microchip
+  accent: "#24507A"
+  summary: STEM — Science, Technology, Engineering, Maths
+  focus: Robotics, Geometry, Computational Thinking, Electronics
+  ongoing_programs:
+    - name: Robotics
+      fee: null
+    - name: Geometry
+      fee: null
+    - name: Computational Thinking
+      fee: null
+    - name: Electronics
+      fee: null
+  workshops: []
+  past_programs: []
+
+- slug: maktab
+  name: Maktab
+  icon: fa-people-roof
+  accent: "#F4A950"
+  summary: Halaqa-based learning
+  focus: Thematic, dialogic learning reinforced with activities
+  ongoing_programs:
+    - name: Maktab
+      fee: null
+  workshops: []
+  past_programs: []
+
+- slug: ihsan
+  name: Ihsan
+  icon: fa-heart
+  accent: "#3E6690"
+  summary: Events and self-development workshops
+  focus: Character and spiritual development
+  ongoing_programs: []
+  workshops:
+    - name: Salah Workshop
+    - name: Sunnah Week
+    - name: Zilhaj Workshop
+    - name: Heartwork
+    - name: Leader in Me
+  past_programs: []

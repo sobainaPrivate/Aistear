@@ -1,0 +1,17 @@
+{% comment %}
+Reusable WhatsApp CTA button.
+Params:
+  text    - button label (default "Enroll on WhatsApp")
+  message - optional prefilled WhatsApp message
+  class   - optional extra class(es), e.g. "btn-lg" or "btn-outline"
+{% endcomment %}
+{% assign btn_text = include.text | default: "Enroll on WhatsApp" %}
+{% assign wa_url = "https://wa.me/" | append: site.whatsapp_number %}
+{% if include.message %}
+  {% assign encoded_message = include.message | url_encode %}
+  {% assign wa_url = wa_url | append: "?text=" | append: encoded_message %}
+{% endif %}
+<a class="btn-whatsapp {{ include.class }}" href="{{ wa_url }}" target="_blank" rel="noopener">
+  <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+  <span>{{ btn_text }}</span>
+</a>
