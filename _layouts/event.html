@@ -1,0 +1,35 @@
+---
+layout: default
+---
+{% assign event = site.data.events.upcoming | where: "slug", page.slug | first %}
+
+<section class="stream-hero">
+  <div class="container">
+    <p class="eyebrow">Upcoming Event</p>
+    <h1>{{ event.title }}</h1>
+    {% if event.tagline %}<p class="stream-summary">{{ event.tagline }}</p>{% endif %}
+  </div>
+</section>
+
+<section>
+  <div class="container event-detail">
+    {% if event.image %}
+    <img src="{{ event.image | relative_url }}" alt="{{ event.title }} poster">
+    {% else %}
+    <div class="event-placeholder" aria-hidden="true"><i class="fa-solid fa-calendar-days"></i></div>
+    {% endif %}
+    <div>
+      <p class="event-date">{{ event.date }}</p>
+      <h2>{{ event.title }}</h2>
+      <p>{{ event.description | default: event.summary }}</p>
+      <ul class="event-facts">
+        {% if event.time %}<li><i class="fa-regular fa-clock" aria-hidden="true"></i> {{ event.time }}</li>{% endif %}
+        {% if event.ages %}<li><i class="fa-solid fa-child" aria-hidden="true"></i> Ages {{ event.ages }}</li>{% endif %}
+        {% if event.fee %}<li><i class="fa-solid fa-tag" aria-hidden="true"></i> {{ event.fee }}</li>{% endif %}
+        {% if event.partner %}<li><i class="fa-solid fa-handshake" aria-hidden="true"></i> With {{ event.partner }}</li>{% endif %}
+        <li><i class="fa-solid fa-location-dot" aria-hidden="true"></i> {{ site.address }}</li>
+      </ul>
+      {% include cta-whatsapp.html text="Register on WhatsApp" message=event.title %}
+    </div>
+  </div>
+</section>

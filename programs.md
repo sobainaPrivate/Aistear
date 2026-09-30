@@ -1,14 +1,14 @@
 ---
 layout: default
 title: Programs
-description: "Explore Aistear's six program streams: Tarteel, Tasdeed, Bayaan, Tahqeeq, Maktab, and Ihsan."
+description: "Explore Aistear's five program streams: Tarteel, Tasdeed, Bayaan, Tahqeeq, and e-Maktab."
 ---
 
 <section class="hero" style="padding:60px 0;">
   <div class="hero-inner">
     <p class="eyebrow" style="color:var(--color-white);opacity:0.8;">Aistear</p>
     <h1 style="color:var(--color-white);">Our Programs</h1>
-    <p class="hero-tagline">Six streams, one journey — nurturing Quran, character, expression, and inquiry.</p>
+    <p class="hero-tagline">Five streams, one journey — nurturing Quran, character, expression, and inquiry.</p>
   </div>
 </section>
 

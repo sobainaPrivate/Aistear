@@ -4,6 +4,7 @@
       <a href="{{ '/' | relative_url }}" class="brand">
         <img src="{{ '/assets/img/A-logo.svg' | relative_url }}" alt="Aistear logo" class="brand-mark">
         <span class="brand-word">Aistear</span>
+        <span class="brand-motto" lang="ar" dir="rtl">النَّاسُ مَعَادِن</span>
       </a>
 
       <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation menu">
@@ -15,16 +16,19 @@
           <li><a href="{{ '/' | relative_url }}">Home</a></li>
           <li><a href="{{ '/about/' | relative_url }}">About</a></li>
           <li class="has-dropdown">
-            <a href="{{ '/programs/' | relative_url }}">Programs <i class="fa-solid fa-chevron-down" aria-hidden="true"></i></a>
+            <a href="{{ '/programs/' | relative_url }}" aria-haspopup="true" aria-expanded="false">Programs <i class="fa-solid fa-chevron-down" aria-hidden="true"></i></a>
             <ul class="dropdown">
               {% for program in site.data.programs %}
-              <li><a href="{{ '/programs/' | append: program.slug | append: '/' | relative_url }}">{{ program.name }}</a></li>
+              <li>
+                <a href="{{ '/programs/' | append: program.slug | append: '/' | relative_url }}" style="--dd-accent: {{ program.accent }};">
+                  <span class="dd-icon"><i class="fa-solid {{ program.icon }}" aria-hidden="true"></i></span>
+                  <span class="dd-text"><strong>{{ program.name }}</strong><small>{{ program.summary }}</small></span>
+                </a>
+              </li>
               {% endfor %}
             </ul>
           </li>
-          <li><a href="{{ '/admissions/' | relative_url }}">Admissions</a></li>
-          <li><a href="{{ '/faculty/' | relative_url }}">Faculty</a></li>
-          <li><a href="{{ '/gallery/' | relative_url }}">Gallery</a></li>
+          <li><a href="{{ '/events/' | relative_url }}">Events</a></li>
           <li><a href="{{ '/contact/' | relative_url }}">Contact</a></li>
         </ul>
         {% include cta-whatsapp.html class="btn-nav" %}

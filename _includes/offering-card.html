@@ -1,0 +1,31 @@
+{% comment %}
+Compact card for one offering on a program stream page (see _layouts/program-stream.html).
+Params:
+  item  - an entry from ongoing_programs / workshops / past_programs in _data/programs.yml
+  label - small uppercase line above the title (e.g. the stream name, "Workshop")
+  past  - true for past programs (no fee line, no enroll link)
+  delay - transition-delay in ms for the scroll-reveal stagger
+{% endcomment %}
+{% assign p = include.item %}
+<article class="card reveal" style="transition-delay: {{ include.delay | default: 0 }}ms;">
+  {% if p.poster %}
+  <a class="card-media" href="{{ p.poster | relative_url }}" target="_blank" rel="noopener" aria-label="View the full {{ p.name }} poster">
+    <img src="{{ p.poster | relative_url }}" alt="{{ p.name }} poster" loading="lazy">
+  </a>
+  {% endif %}
+  <div class="card-body">
+    {% if include.label %}<p class="card-label">{{ include.label }}</p>{% endif %}
+    <h3 class="card-title">{{ p.name }}</h3>
+    {% if p.description %}<p class="card-desc">{{ p.description }}</p>{% endif %}
+    {% if p.ages or p.schedule %}
+    <p class="card-meta">
+      {% if p.ages %}<span><i class="fa-solid fa-child" aria-hidden="true"></i> Ages {{ p.ages }}</span>{% endif %}
+      {% if p.schedule %}<span><i class="fa-regular fa-clock" aria-hidden="true"></i> {{ p.schedule }}</span>{% endif %}
+    </p>
+    {% endif %}
+    {% unless include.past %}
+    <p class="card-price">{% if p.fee %}{{ p.fee }}{% else %}Fee details on WhatsApp{% endif %}</p>
+    <div class="card-action">{% include cta-whatsapp.html text="Enroll on WhatsApp" message=p.name class="btn-link" %}</div>
+    {% endunless %}
+  </div>
+</article>

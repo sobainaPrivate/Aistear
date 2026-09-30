@@ -1,0 +1,53 @@
+# Events (formerly the "Ihsan" stream — character and spiritual development).
+#
+# upcoming: each entry needs a matching page at events/<slug>.md (front matter: slug + title)
+#           which renders with _layouts/event.html. Includes events currently running.
+# past:     shown as highlight cards on /events/. No detail page needed.
+# When an event finishes, move it from upcoming to past and delete its events/<slug>.md.
+#
+# Fields: slug, title, tagline, date, time, ages, fee, partner, image, summary, description.
+# image is optional — cards show a placeholder when it's missing.
+
+upcoming:
+  - slug: allah-first-hearts
+    title: Allah-First Hearts
+    tagline: A 4-week Tawheed series
+    date: "Saturdays · 12 Sep – 3 Oct"
+    time: "12–2pm"
+    fee: "8,000 PKR"
+    partner: Little Ummati
+    image: /assets/img/events/allah-first-hearts.jpg
+    summary: A play-based sensory journey into the heart of faith — 4 weeks, 4 themes, 4 names of Allah.
+    description: >-
+      Four weeks, four themes, four names of Allah: From Allah (Al-Khaliq), By Allah
+      (Al-Qawiyy), For Allah (Al-Musawwir) and To Allah (Al-Baqi). Each week is a
+      play-based, sensory session that helps young hearts put Allah first.
+      Presented together with Little Ummati.
+
+  - slug: salah-workshop
+    title: Salah Workshop
+    date: "Coming soon"
+    image: null
+    summary: A practical gathering for children to deepen their connection with salah.
+    description: Join us for a reflective, activity-led workshop focused on building a beautiful and consistent salah practice.
+
+past:
+  - title: In the Footsteps of the Prophet ﷺ
+    date: "5 September"
+    image: /assets/img/events/footsteps-of-the-prophet.jpg
+    summary: A workshop where young hearts gathered as one Ummah — immersive story hour, modern calligraphy and a Seerah corner.
+
+  - title: The Special Pond
+    date: "3 September"
+    image: /assets/img/events/special-pond.jpg
+    summary: A Rabi ul Awwal session for young hearts — themes from Surah Kauthar, a Qira'at circle, collage art journalling and a nasheed challenge.
+
+  - title: The Blessed Hours
+    date: "Ramadan"
+    image: /assets/img/events/blessed-hours.jpg
+    summary: Connecting young hearts with the communal spirit of Ramadan through Quranic recitals, reminders and supplications over iftaar.
+
+  - title: Sunnah Week
+    date: "Past highlight"
+    image: null
+    summary: A week of learning, practice, and joyful reminders from the Sunnah.

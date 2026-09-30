@@ -13,10 +13,33 @@ document.addEventListener('DOMContentLoaded', function () {
     link.addEventListener('click', function (e) {
       if (window.innerWidth <= 760) {
         e.preventDefault();
-        link.parentElement.classList.toggle('open');
+        var dropdownParent = link.parentElement;
+        var isOpen = dropdownParent.classList.toggle('open');
+        link.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
       }
     });
+
+    link.parentElement.querySelectorAll('.dropdown a').forEach(function (item) {
+      item.addEventListener('click', function () {
+        link.setAttribute('aria-expanded', 'false');
+        link.parentElement.classList.remove('open');
+        if (menu) {
+          menu.classList.remove('open');
+          if (toggle) toggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+    });
   });
+
+  // Overlay header (home page): transparent over the hero, solid navy once scrolled.
+  var header = document.querySelector('.site-header');
+  if (header && document.body.classList.contains('overlay-header')) {
+    var updateHeader = function () {
+      header.classList.toggle('scrolled', window.scrollY > 20);
+    };
+    updateHeader();
+    window.addEventListener('scroll', updateHeader, { passive: true });
+  }
 
   var backToTop = document.querySelector('.back-to-top');
   if (backToTop) {
@@ -90,7 +113,7 @@ document.addEventListener('DOMContentLoaded', function () {
   var arabicLayer = document.querySelector('[data-arabic-fall]');
   if (arabicLayer && !prefersReducedMotion && 'IntersectionObserver' in window) {
     var arabicLetters = ['ا', 'ب', 'ت', 'ث', 'ج', 'ح', 'خ', 'د', 'ذ', 'ر', 'ز', 'س', 'ش', 'ص', 'ض', 'ط', 'ظ', 'ع', 'غ', 'ف', 'ق', 'ك', 'ل', 'م', 'ن', 'ه', 'و', 'ي'];
-    var arabicColors = ['#FB8629', '#1B3B5A', '#E07016', '#24507A', '#F4A950', '#3E6690'];
+    var arabicColors = ['#FB8629', '#0D47A1', '#E07016', '#1E88E5', '#F4A950', '#1565C0'];
 
     function spawnArabicFall(container) {
       var count = 26;

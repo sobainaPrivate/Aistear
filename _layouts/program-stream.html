@@ -20,15 +20,8 @@ layout: default
     <h2>Ongoing Programs</h2>
     <div class="card-grid">
       {% for p in program.ongoing_programs %}
-      <div class="offering-card reveal" style="transition-delay: {{ forloop.index0 | times: 90 }}ms;">
-        <h3>{{ p.name }}</h3>
-        {% if p.ages %}<p class="offering-meta"><i class="fa-solid fa-child" aria-hidden="true"></i> Ages {{ p.ages }}</p>{% endif %}
-        {% if p.schedule %}<p class="offering-meta"><i class="fa-regular fa-clock" aria-hidden="true"></i> {{ p.schedule }}</p>{% endif %}
-        <p class="offering-fee">
-          {% if p.fee %}{{ p.fee }}{% else %}Contact us on WhatsApp for current fee details{% endif %}
-        </p>
-        {% include cta-whatsapp.html text="Enroll on WhatsApp" message=p.name %}
-      </div>
+      {% assign delay = forloop.index0 | times: 90 %}
+      {% include offering-card.html item=p label=program.name delay=delay %}
       {% endfor %}
     </div>
   </section>
@@ -39,11 +32,13 @@ layout: default
     <h2>Workshops &amp; Camps</h2>
     <div class="card-grid">
       {% for w in program.workshops %}
-      <div class="offering-card offering-card-light reveal" style="transition-delay: {{ forloop.index0 | times: 90 }}ms;">
-        <h3>{{ w.name }}</h3>
-        {% if w.cadence %}<p class="offering-meta"><i class="fa-solid fa-calendar" aria-hidden="true"></i> {{ w.cadence | capitalize }}</p>{% endif %}
-        {% include cta-whatsapp.html text="Register" message=w.name class="btn-outline" %}
-      </div>
+      <article class="card reveal" style="transition-delay: {{ forloop.index0 | times: 90 }}ms;">
+        <div class="card-body">
+          <p class="card-label">{% if w.cadence %}{{ w.cadence }}{% else %}Workshop{% endif %}</p>
+          <h3 class="card-title">{{ w.name }}</h3>
+          <div class="card-action">{% include cta-whatsapp.html text="Register on WhatsApp" message=w.name class="btn-link" %}</div>
+        </div>
+      </article>
       {% endfor %}
     </div>
   </section>
@@ -52,11 +47,12 @@ layout: default
   {% if program.past_programs and program.past_programs.size > 0 %}
   <section class="stream-section">
     <h2>Past Programs</h2>
-    <ul class="past-list">
+    <div class="card-grid">
       {% for pp in program.past_programs %}
-      <li>{{ pp.name }}</li>
+      {% assign delay = forloop.index0 | times: 90 %}
+      {% include offering-card.html item=pp label="Past program" past=true delay=delay %}
       {% endfor %}
-    </ul>
+    </div>
   </section>
   {% endif %}
 </div>

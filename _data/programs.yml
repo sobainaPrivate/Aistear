@@ -1,25 +1,34 @@
 # CLIENT TODO: fees are set to `null` wherever the brief marked them TODO.
 # Pages fall back to "Contact us on WhatsApp for current fee details" when fee is null.
 # Fill in real numbers here once confirmed and they'll appear on every page automatically.
+#
+# Optional per-offering fields: description, poster (image path under /assets/img/programs/).
+# When a running program finishes, move it from ongoing_programs to past_programs.
 
 - slug: tarteel
   name: Tarteel
   icon: fa-book-quran
   accent: "#FB8629"
-  summary: Hifdh program using the Muratania Method
+  summary: Hifdh program using the Mauritanian Method
   focus: Memorization, loah writing, reflective tafseer
   ongoing_programs:
     - name: Tarteel (Hifdh)
       ages: "8–12"
       schedule: "Tue/Thu/Sat, 4–6pm"
       fee: null
+    - name: "Surah Al-Waqi'ah Camp"
+      description: "A 2-month memorization and Qira'at camp — 16 sessions, 96 verses, Hifdh through the Mauritanian method with thematic journalling."
+      ages: "8–10"
+      schedule: "Tue & Sat, 4:00–5:30pm · started 15 Sep"
+      fee: "10,000 PKR"
+      poster: /assets/img/programs/surah-waqiah.jpg
   workshops: []
   past_programs: []
 
 - slug: tasdeed
   name: Tasdeed
   icon: fa-book-open-reader
-  accent: "#1B3B5A"
+  accent: "#0D47A1"
   summary: Nazra and Islamic foundations
   focus: Quran reading (Nazra), Islamic foundations
   ongoing_programs:
@@ -55,10 +64,15 @@
 - slug: tahqeeq
   name: Tahqeeq
   icon: fa-microchip
-  accent: "#24507A"
+  accent: "#1E88E5"
   summary: STEM — Science, Technology, Engineering, Maths
   focus: Robotics, Geometry, Computational Thinking, Electronics
   ongoing_programs:
+    - name: "Sacred Strokes — Kufic Calligraphy"
+      description: "An introduction to Kufic calligraphy: heritage, precision and balance. A 3-month course."
+      schedule: "Saturdays, 3–4pm · started 19 Sep"
+      fee: "6,000 PKR monthly"
+      poster: /assets/img/programs/sacred-strokes.jpg
     - name: Robotics
       fee: null
     - name: Geometry
@@ -71,28 +85,18 @@
   past_programs: []
 
 - slug: maktab
-  name: Maktab
+  name: e-Maktab
   icon: fa-people-roof
   accent: "#F4A950"
   summary: Halaqa-based learning
   focus: Thematic, dialogic learning reinforced with activities
   ongoing_programs:
-    - name: Maktab
+    - name: e-Maktab
       fee: null
   workshops: []
-  past_programs: []
-
-- slug: ihsan
-  name: Ihsan
-  icon: fa-heart
-  accent: "#3E6690"
-  summary: Events and self-development workshops
-  focus: Character and spiritual development
-  ongoing_programs: []
-  workshops:
-    - name: Salah Workshop
-    - name: Sunnah Week
-    - name: Zilhaj Workshop
-    - name: Heartwork
-    - name: Leader in Me
-  past_programs: []
+  past_programs:
+    - name: The Mighty Ayah
+      description: "A 5-session in-depth journey through Ayat ul Kursi with art, journaling and reflective dialogue."
+      ages: "9–13"
+      schedule: "Saturdays from 14 Feb, 2:00–3:30pm"
+      poster: /assets/img/programs/mighty-ayah.jpg

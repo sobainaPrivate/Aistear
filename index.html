@@ -1,18 +1,19 @@
 ---
 layout: default
 title: Home
+overlay_header: true
 description: "Aistear is an Islamic education institute in Lahore offering Quran memorization, Islamic foundations, creative writing, STEM, and character-development programs for children."
 ---
 
-<section class="hero">
-  <video class="hero-video" autoplay muted loop playsinline preload="auto" aria-hidden="true">
-    <source src="{{ '/assets/video/hero.mp4' | relative_url }}" type="video/mp4">
-  </video>
-  <div class="hero-scrim" aria-hidden="true"></div>
+<section class="hero hero-home">
+  <figure class="hero-photo">
+    <img src="{{ '/assets/img/heroimage.jpeg' | relative_url }}" alt="Aistear students practising calligraphy together">
+  </figure>
   <div class="hero-inner">
-    <img src="{{ '/assets/img/A-logo.svg' | relative_url }}" alt="Aistear logo" class="hero-mark">
-    <h1>Aistear</h1>
-    <p class="hero-tagline">{{ site.tagline }}</p>
+    <div class="hero-home-text">
+      <h1>Aistear</h1>
+      <p class="hero-tagline">{{ site.tagline }}</p>
+    </div>
   </div>
 </section>
 
@@ -29,7 +30,7 @@ description: "Aistear is an Islamic education institute in Lahore offering Quran
       <div class="stats-grid">
         <div class="stat-card reveal" style="transition-delay: 0ms;">
           <div class="stat-icon"><i class="fa-solid fa-layer-group" aria-hidden="true"></i></div>
-          <div class="stat-number"><span class="stat-count" data-target="6">0</span></div>
+          <div class="stat-number"><span class="stat-count" data-target="5">0</span></div>
           <div class="stat-label">Program Streams</div>
         </div>
         <div class="stat-card reveal" style="transition-delay: 90ms;">
@@ -58,7 +59,7 @@ description: "Aistear is an Islamic education institute in Lahore offering Quran
   <div class="container">
     <div class="section-heading">
       <p class="eyebrow">Aistear</p>
-      <h2>Six Program Streams, One Journey</h2>
+      <h2>Five Program Streams, One Journey</h2>
       <p>Each stream nurtures a different dimension of your child's growth — Quran, character, expression, and inquiry.</p>
     </div>
     <div class="stream-grid">

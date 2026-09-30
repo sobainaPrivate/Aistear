@@ -3,7 +3,7 @@
 <head>
 {% include head-meta.html %}
 </head>
-<body id="top">
+<body id="top"{% if page.overlay_header %} class="overlay-header"{% endif %}>
 {% include nav.html %}
 <main>
 {{ content }}
