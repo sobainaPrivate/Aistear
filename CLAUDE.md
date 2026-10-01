@@ -28,6 +28,7 @@ _data/
   programs.yml         Source of truth for the program streams (drives nav, footer, home, stream pages)
   events.yml           upcoming[] and past[] events (drives events.md)
   faculty.yml          Educators (drives the team section in about.md)
+  testimonials.yml     Parent feedback (drives "What Our Families Say" on the home page)
 _layouts/
   default.html         Shell: head-meta + nav + <main> + footer
   program-stream.html  Stream page: looks up the program in _data/programs.yml by page.slug
@@ -100,7 +101,6 @@ assets/img/, assets/video/
 
 ## Known gaps / gotchas
 - Posters are ~0.2–1.2 MB each and should be compressed before going live.
-- Home testimonials are lorem-ipsum placeholders.
 - `assets/video/hero.mp4` and `assets/img/favicon.ico` are unused (the home hero uses
   `heroimage.jpeg`; the favicon is `newfavicon.svg`).
 - Files use LF endings; git on Windows may warn about CRLF conversion.
