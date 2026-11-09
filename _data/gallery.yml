@@ -1,0 +1,13 @@
+# Photos for the home page "spotlight" collage (Edopia-style: portrait images that slide
+# apart on scroll to reveal the "What are we doing here" text).
+# Exactly 4 images: the 1st/3rd sit on the left, the 2nd/4th on the right. Portrait (4:5) works best.
+# CLIENT TODO: these are program/event posters standing in for real classroom photos —
+# swap in photos of children learning once the client supplies them (faces blurred / consent).
+- image: /assets/img/programs/mighty-ayah.jpg
+  alt: "The Mighty Ayah program poster"
+- image: /assets/img/programs/sacred-strokes.jpg
+  alt: "Sacred Strokes Kufic calligraphy course poster"
+- image: /assets/img/events/special-pond.jpg
+  alt: "The Special Pond event poster"
+- image: /assets/img/events/blessed-hours.jpg
+  alt: "The Blessed Hours Ramadan gathering poster"

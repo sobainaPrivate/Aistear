@@ -5,50 +5,53 @@ overlay_header: true
 description: "Aistear is an Islamic education institute in Lahore offering Quran memorization, Islamic foundations, creative writing, STEM, and character-development programs for children."
 ---
 
-<section class="hero hero-home">
-  <figure class="hero-photo">
-    <img src="{{ '/assets/img/heroimage.jpeg' | relative_url }}" alt="Aistear students practising calligraphy together">
-  </figure>
-  <div class="hero-inner">
-    <div class="hero-home-text">
-      <h1>Aistear</h1>
-      <p class="hero-tagline">{{ site.tagline }}</p>
+<!-- Hero: full-bleed photo, no logo (the logo lives in the navbar only). -->
+<section class="hero-full">
+  <img class="hero-full-bg" src="{{ '/assets/img/heroimage.jpeg' | relative_url }}" alt="Aistear students practising calligraphy together">
+  <div class="container hero-full-inner">
+    <div class="hero-full-text">
+      <h1>A Journey of <span class="hl">Nurturing</span> Future Leaders of the Ummah</h1>
+      <div class="hero-actions">
+        <a class="btn btn-ghost" href="{{ '/about/' | relative_url }}">Our Vision</a>
+        <a class="btn btn-primary" href="{{ '/programs/' | relative_url }}#ongoing">Register</a>
+      </div>
     </div>
+    <blockquote class="hero-motto">
+      <p class="hero-motto-ar" lang="ar" dir="rtl">النَّاسُ <span class="hl">مَعَادِن</span></p>
+      <p class="hero-motto-en">“Human beings are ores.”</p>
+      <!-- CLIENT TODO: confirm the hadith reference to show here (e.g. Sahih al-Bukhari / Sahih Muslim number). -->
+      <cite>— Hadith</cite>
+    </blockquote>
   </div>
 </section>
 
-<section id="about">
-  <div class="container two-col">
-    <div>
+<!-- About + Edopia-style spotlight: portrait images start overlapping in the middle and
+     slide apart as you scroll, revealing the text between them (see main.js "spotlight"). -->
+<section class="spotlight-section" id="about">
+  <div class="container">
+    <div class="section-heading align-left">
       <p class="eyebrow">About Us</p>
-      <h2>Aistear — the Gaelic word for "journey" — profoundly reflects our core value of lifelong learning.</h2>
-      <p>We are rooted in an Islamic worldview and committed to nurturing each child's unique fitrah in a space filled with creativity, curiosity, and companionship. We aim to support every learner's individual growth by helping them strengthen their bond with Allah (SWT) and flourish as future leaders who love and live the Quran with excellence (Ihsan).</p>
-      <a href="{{ '/about/' | relative_url }}" class="stream-link">Read our story <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+      <h2>Aistear: the Gaelic word for <span class="hl">“journey”</span></h2>
+      <p class="subheading">A space for lifelong learning, rooted in an Islamic worldview.</p>
     </div>
-    <div>
-      <!-- CLIENT TODO (brief §10): confirm current stats — cohorts/programs/educators/students -->
-      <div class="stats-grid">
-        <div class="stat-card reveal" style="transition-delay: 0ms;">
-          <div class="stat-icon"><i class="fa-solid fa-layer-group" aria-hidden="true"></i></div>
-          <div class="stat-number"><span class="stat-count" data-target="5">0</span></div>
-          <div class="stat-label">Program Streams</div>
-        </div>
-        <div class="stat-card reveal" style="transition-delay: 90ms;">
-          <div class="stat-icon"><i class="fa-solid fa-calendar-check" aria-hidden="true"></i></div>
-          <div class="stat-number"><span class="stat-count" data-target="3">0</span></div>
-          <div class="stat-label">Cohorts</div>
-        </div>
-        <div class="stat-card reveal" style="transition-delay: 180ms;">
-          <div class="stat-icon"><i class="fa-solid fa-chalkboard-user" aria-hidden="true"></i></div>
-          <div class="stat-number"><span class="stat-count" data-target="5">0</span></div>
-          <div class="stat-label">Educators</div>
-        </div>
-        <div class="stat-card reveal" style="transition-delay: 270ms;">
-          <div class="stat-icon"><i class="fa-solid fa-face-smile" aria-hidden="true"></i></div>
-          <div class="stat-number"><span class="stat-count" data-target="30">0</span>+</div>
-          <div class="stat-label">Happy Students</div>
-        </div>
-      </div>
+  </div>
+  <div class="container spotlight" data-spotlight>
+    {% assign g = site.data.gallery %}
+    <div class="spotlight-col spotlight-left">
+      {% for item in g %}{% assign odd = forloop.index | modulo: 2 %}{% if odd == 1 %}
+      <figure class="spotlight-img"><img src="{{ item.image | relative_url }}" alt="{{ item.alt }}" loading="lazy"></figure>
+      {% endif %}{% endfor %}
+    </div>
+    <div class="spotlight-copy">
+      <p class="eyebrow">What are we doing here</p>
+      <p>We are committed to nurturing each child's unique fitrah in a space filled with creativity, curiosity, and companionship.</p>
+      <p>We aim to support every learner's individual growth by helping them strengthen their bond with Allah (SWT) and flourish as future leaders who love and live the Quran with excellence (Ihsan).</p>
+      <a href="{{ '/about/' | relative_url }}" class="text-link">Read our story <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+    </div>
+    <div class="spotlight-col spotlight-right">
+      {% for item in g %}{% assign odd = forloop.index | modulo: 2 %}{% if odd == 0 %}
+      <figure class="spotlight-img"><img src="{{ item.image | relative_url }}" alt="{{ item.alt }}" loading="lazy"></figure>
+      {% endif %}{% endfor %}
     </div>
   </div>
 </section>
@@ -58,84 +61,65 @@ description: "Aistear is an Islamic education institute in Lahore offering Quran
   <div class="arabic-fall-layer" data-arabic-fall aria-hidden="true"></div>
   <div class="container">
     <div class="section-heading">
-      <p class="eyebrow">Aistear</p>
-      <h2>Five Program Streams, One Journey</h2>
-      <p>Each stream nurtures a different dimension of your child's growth — Quran, character, expression, and inquiry.</p>
+      <p class="eyebrow">Our Programs</p>
+      <h2>Four Program Streams, <span class="hl">One Journey</span></h2>
+      <p>Each stream nurtures a different dimension of your child's growth: Quran, character, expression, and inquiry.</p>
     </div>
     <div class="stream-grid">
       {% for program in site.data.programs %}
-      <div class="stream-card reveal" style="--card-accent: {{ program.accent }}; transition-delay: {{ forloop.index0 | times: 90 }}ms;">
-        <div class="stream-icon-wrap">
-          <i class="fa-solid {{ program.icon }} stream-icon" aria-hidden="true"></i>
-        </div>
+      <a class="stream-card reveal" href="{{ '/programs/' | append: program.slug | append: '/' | relative_url }}" style="--card-accent: {{ program.accent }}; transition-delay: {{ forloop.index0 | times: 90 }}ms;">
+        <span class="stream-icon-wrap"><i class="fa-solid {{ program.icon }} stream-icon" aria-hidden="true"></i></span>
         <h3>{{ program.name }}</h3>
         <p>{{ program.summary }}</p>
-        <a class="stream-link" href="{{ '/programs/' | append: program.slug | append: '/' | relative_url }}">Learn more <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
-      </div>
+        <span class="stream-link">Learn more <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
+      </a>
       {% endfor %}
     </div>
   </div>
 </section>
 
-<section id="feature">
-  <div class="container two-col">
-    <div>
-      <p class="eyebrow">Why Choose Us?</p>
-      <h2>Why You Should Start Learning with Us</h2>
-      <div class="feature-list">
-        <div class="feature-item">
-          <div class="feature-icon"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i></div>
-          <div>
-            <h4>Certified Educators</h4>
-            <p>Our team combines formal pedagogical training with Islamic scholarship, so every session is both rigorous and rooted.</p>
-          </div>
-        </div>
-        <div class="feature-item">
-          <div class="feature-icon"><i class="fa-solid fa-certificate" aria-hidden="true"></i></div>
-          <div>
-            <h4>Child-Led Education</h4>
-            <p>We design around each child's pace and curiosity rather than a one-size-fits-all curriculum.</p>
-          </div>
-        </div>
-        <div class="feature-item">
-          <div class="feature-icon"><i class="fa-solid fa-book-open-reader" aria-hidden="true"></i></div>
-          <div>
-            <h4>21st Century Skills</h4>
-            <p>From robotics to public speaking, our programs build the practical skills today's learners need alongside their deen.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div>
-      <img src="{{ '/assets/img/A-logo.svg' | relative_url }}" alt="Aistear geometric emblem" style="max-width:280px;margin:0 auto;display:block;">
-    </div>
-  </div>
-</section>
-
-<section class="bg-light" id="testimonial">
+<section id="testimonial">
   <div class="container">
     <div class="section-heading">
       <p class="eyebrow">Testimonials</p>
-      <h2>What Our Families Say</h2>
+      <h2>What Our <span class="hl">Families</span> Say</h2>
     </div>
-    <!-- Parent feedback from _data/testimonials.yml.
-         CLIENT TODO (brief §8): confirm consent before attaching names to any testimonial. -->
-    <div class="testimonial-grid">
-      {% for t in site.data.testimonials %}
-      <div class="testimonial-card reveal" style="transition-delay: {{ forloop.index0 | times: 90 }}ms;">
-        <i class="fa-solid fa-quote-left" aria-hidden="true"></i>
-        <p>{{ t.quote }}</p>
-        <div class="testimonial-author">{{ t.author | default: "Aistear Parent" }}{% if t.context %}<span>{{ t.context }}</span>{% endif %}</div>
+  </div>
+  <div class="container testimonial-layout">
+    <figure class="testimonial-photo crop-sidebars">
+      <img src="{{ '/assets/img/Testimonials.jpeg' | relative_url }}" alt="Children's landscape paintings laid out beside the Quranic ayah they illustrate" loading="lazy">
+    </figure>
+    <div class="testimonial-side">
+      <!-- Infinite two-row marquee (rows run in opposite directions). Each row's cards are
+           rendered 4× so the track is always wider than the screen; the CSS animation moves it
+           by exactly half (-50%) so the loop is seamless. Copies 2–4 are hidden from screen readers.
+           CLIENT TODO (brief §8): confirm consent before attaching names to any testimonial. -->
+      <div class="marquee" aria-label="Parent testimonials">
+        {% for row in (1..2) %}
+        <div class="marquee-row{% if row == 2 %} marquee-reverse{% endif %}">
+          {% for copy in (1..4) %}
+          {% if row == 2 %}{% assign list = site.data.testimonials | reverse %}{% else %}{% assign list = site.data.testimonials %}{% endif %}
+          {% for t in list %}
+          <figure class="quote-card"{% if copy > 1 or row == 2 %} aria-hidden="true"{% endif %}>
+            <i class="fa-solid fa-quote-left" aria-hidden="true"></i>
+            <blockquote>{{ t.quote }}</blockquote>
+            <figcaption>{{ t.author | default: "Aistear Parent" }}{% if t.context %}<span>{{ t.context }}</span>{% endif %}</figcaption>
+          </figure>
+          {% endfor %}
+          {% endfor %}
+        </div>
+        {% endfor %}
       </div>
-      {% endfor %}
     </div>
   </div>
 </section>
 
-<section class="bg-navy" id="contact">
-  <div class="container" style="text-align:center;">
-    <h2>Ready to Begin the Journey?</h2>
-    <p style="max-width:520px;margin:0 auto 28px;opacity:0.9;">Message us on WhatsApp to enroll your child or ask any questions about our programs.</p>
-    {% include cta-whatsapp.html text="Enroll on WhatsApp" class="btn-lg" %}
+<section class="bg-light" id="contact">
+  <div class="container engage">
+    <p class="eyebrow">Parents</p>
+    <h2>Parents <span class="hl">Engagement</span></h2>
+    <!-- CLIENT TODO: confirm/replace this copy about how parents take part. -->
+    <p>Parents are partners in every child's journey. Message us on WhatsApp to enroll your child, ask about our programs, or find out how you can be part of the Aistear community.</p>
+    {% include cta-whatsapp.html text="Talk to Us on WhatsApp" class="btn-lg" %}
   </div>
 </section>

@@ -2,18 +2,26 @@
 # Pages fall back to "Contact us on WhatsApp for current fee details" when fee is null.
 # Fill in real numbers here once confirmed and they'll appear on every page automatically.
 #
+# Optional per-stream field: hero_image (background photo for the stream page header).
 # Optional per-offering fields: description, poster (image path under /assets/img/programs/).
 # When a running program finishes, move it from ongoing_programs to past_programs.
 
-- slug: tarteel
-  name: Tarteel
+- slug: quran
+  name: Quran
   icon: fa-book-quran
-  accent: "#FB8629"
-  summary: Hifdh program using the Mauritanian Method
-  focus: Memorization, loah writing, reflective tafseer
+  accent: "#F27329"
+  summary: "Tarteel (Hifdh) and Tasdeed (Nazra): reading, memorising and living the Quran"
+  focus: "Hifdh through the Mauritanian Method, loah writing, reflective tafseer, Nazra and Islamic foundations"
+  hero_image: /assets/img/quran.webp
   ongoing_programs:
     - name: Tarteel (Hifdh)
+      description: "Hifdh through the Mauritanian Method: memorisation, loah writing and reflective tafseer."
       ages: "8–12"
+      schedule: "Tue/Thu/Sat, 4–6pm"
+      fee: null
+    - name: Tasdeed (Nazra)
+      description: "Confident Quran reading (Nazra) and a clear grounding in Islamic foundations."
+      ages: "6–9"
       schedule: "Tue/Thu/Sat, 4–6pm"
       fee: null
     - name: "Surah Al-Waqi'ah Camp"
@@ -25,46 +33,27 @@
   workshops: []
   past_programs: []
 
-- slug: tasdeed
-  name: Tasdeed
-  icon: fa-book-open-reader
-  accent: "#0D47A1"
-  summary: Nazra and Islamic foundations
-  focus: Quran reading (Nazra), Islamic foundations
+- slug: maktab
+  name: e-Maktab
+  icon: fa-people-roof
+  accent: "#63B0F2"
+  summary: Halaqa-based learning
+  focus: Thematic, dialogic learning reinforced with activities
   ongoing_programs:
-    - name: Tasdeed
-      ages: "6–9"
-      schedule: "Tue/Thu/Sat, 4–6pm"
+    - name: e-Maktab
       fee: null
   workshops: []
-  past_programs: []
-
-- slug: bayaan
-  name: Bayaan
-  icon: fa-feather-pointed
-  accent: "#E07016"
-  summary: "Art of Expression and Communication"
-  focus: Writing, speaking, art, storytelling
-  ongoing_programs:
-    - name: Creative Writing
-      fee: null
-    - name: Calligraphy
-      fee: null
-  workshops:
-    - name: Oratory (public speaking)
-      cadence: workshop
-    - name: Arz o Sama (painting)
-      cadence: workshop
-    - name: Story Hour
-      cadence: monthly
-    - name: Readers Retreat
-      cadence: null
-  past_programs: []
+  past_programs:
+    - name: The Mighty Ayah
+      description: "A 5-session in-depth journey through Ayat ul Kursi with art, journaling and reflective dialogue."
+      ages: "9–13"
+      schedule: "Saturdays from 14 Feb, 2:00–3:30pm"
+      poster: /assets/img/programs/mighty-ayah.jpg
 
 - slug: tahqeeq
   name: Tahqeeq
   icon: fa-microchip
-  accent: "#1E88E5"
+  accent: "#1A80D9"
   summary: STEM — Science, Technology, Engineering, Maths
   focus: Robotics, Geometry, Computational Thinking, Electronics
   ongoing_programs:
@@ -84,19 +73,25 @@
   workshops: []
   past_programs: []
 
-- slug: maktab
-  name: e-Maktab
-  icon: fa-people-roof
-  accent: "#F4A950"
-  summary: Halaqa-based learning
-  focus: Thematic, dialogic learning reinforced with activities
+- slug: bayaan
+  name: Bayaan
+  icon: fa-feather-pointed
+  accent: "#D95F17"
+  summary: "Art of Expression and Communication"
+  focus: Writing, speaking, art, storytelling
+  hero_image: /assets/img/bayaan.jpeg
   ongoing_programs:
-    - name: e-Maktab
+    - name: Creative Writing
       fee: null
-  workshops: []
-  past_programs:
-    - name: The Mighty Ayah
-      description: "A 5-session in-depth journey through Ayat ul Kursi with art, journaling and reflective dialogue."
-      ages: "9–13"
-      schedule: "Saturdays from 14 Feb, 2:00–3:30pm"
-      poster: /assets/img/programs/mighty-ayah.jpg
+    - name: Calligraphy
+      fee: null
+  workshops:
+    - name: Oratory (public speaking)
+      cadence: workshop
+    - name: Arz o Sama (painting)
+      cadence: workshop
+    - name: Story Hour
+      cadence: monthly
+    - name: Readers Retreat
+      cadence: null
+  past_programs: []

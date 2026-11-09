@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  // Overlay header (home page): transparent over the hero, solid navy once scrolled.
+  // Overlay header (home page): transparent over the hero, solid white once scrolled.
   var header = document.querySelector('.site-header');
   if (header && document.body.classList.contains('overlay-header')) {
     var updateHeader = function () {
@@ -108,12 +108,46 @@ document.addEventListener('DOMContentLoaded', function () {
     countEls.forEach(function (el) { el.textContent = el.getAttribute('data-target'); });
   }
 
+  // Edopia-style spotlight: images start pushed in over the middle and slide apart as the
+  // block scrolls up the screen. Writes --spread (0 → 1) on the block; CSS does the rest.
+  // Desktop only (the CSS shows a static grid below 900px) and skipped for reduced motion.
+  var spotlights = document.querySelectorAll('[data-spotlight]');
+  if (spotlights.length && !prefersReducedMotion) {
+    var spotlightTicking = false;
+    var updateSpotlights = function () {
+      spotlightTicking = false;
+      var vh = window.innerHeight;
+      var wide = window.innerWidth > 900;
+      spotlights.forEach(function (el) {
+        if (!wide) { el.style.removeProperty('--spread'); return; }
+        var rect = el.getBoundingClientRect();
+        // 0 when the block's top reaches the bottom of the screen,
+        // 1 once its middle reaches the middle of the screen.
+        var start = vh;
+        var end = vh / 2 - rect.height / 2;
+        var p = (start - rect.top) / (start - end);
+        p = Math.max(0, Math.min(1, p));
+        p = 1 - Math.pow(1 - p, 2); // ease-out
+        el.style.setProperty('--spread', p.toFixed(3));
+      });
+    };
+    var requestSpotlight = function () {
+      if (!spotlightTicking) {
+        spotlightTicking = true;
+        window.requestAnimationFrame(updateSpotlights);
+      }
+    };
+    updateSpotlights();
+    window.addEventListener('scroll', requestSpotlight, { passive: true });
+    window.addEventListener('resize', requestSpotlight);
+  }
+
   // One-shot "confetti" burst of falling Arabic letters when the Programs section
   // scrolls into view — like the glitter-drop on a congratulations email.
   var arabicLayer = document.querySelector('[data-arabic-fall]');
   if (arabicLayer && !prefersReducedMotion && 'IntersectionObserver' in window) {
     var arabicLetters = ['ا', 'ب', 'ت', 'ث', 'ج', 'ح', 'خ', 'د', 'ذ', 'ر', 'ز', 'س', 'ش', 'ص', 'ض', 'ط', 'ظ', 'ع', 'غ', 'ف', 'ق', 'ك', 'ل', 'م', 'ن', 'ه', 'و', 'ي'];
-    var arabicColors = ['#FB8629', '#0D47A1', '#E07016', '#1E88E5', '#F4A950', '#1565C0'];
+    var arabicColors = ['#F27329', '#1A80D9', '#D95F17', '#63B0F2', '#404040'];
 
     function spawnArabicFall(container) {
       var count = 26;

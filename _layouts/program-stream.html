@@ -3,7 +3,8 @@ layout: default
 ---
 {% assign program = site.data.programs | where: "slug", page.slug | first %}
 
-<section class="stream-hero" style="--hero-accent: {{ program.accent }};">
+<section class="stream-hero{% if program.hero_image %} has-bg{% endif %}" style="--hero-accent: {{ program.accent }};">
+  {% if program.hero_image %}<img class="hero-bg" src="{{ program.hero_image | relative_url }}" alt="" aria-hidden="true">{% endif %}
   <div class="container">
     <p class="eyebrow">Program Stream</p>
     <h1><span class="stream-hero-icon"><i class="fa-solid {{ program.icon }}" aria-hidden="true"></i></span> {{ program.name }}</h1>

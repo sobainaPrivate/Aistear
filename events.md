@@ -4,10 +4,11 @@ title: Events
 description: "Upcoming events and past highlights from Aistear."
 ---
 
-<section class="hero" style="padding:60px 0;">
+<section class="hero hero-page has-bg">
+  <img class="hero-bg" src="{{ '/assets/img/events.jpeg' | relative_url }}" alt="" aria-hidden="true">
   <div class="hero-inner">
-    <p class="eyebrow" style="color:var(--color-white);opacity:0.8;">Aistear Events</p>
-    <h1 style="color:var(--color-white);">Gather, Learn, Grow</h1>
+    <p class="eyebrow">Aistear Events</p>
+    <h1>Gather, Learn, Grow</h1>
     <p class="hero-tagline">Workshops and experiences that nurture character, confidence, and community.</p>
   </div>
 </section>

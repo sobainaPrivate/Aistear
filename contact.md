@@ -4,10 +4,10 @@ title: Contact
 description: "Get in touch with Aistear — phone, email, WhatsApp, and our location in DHA Phase 1, Lahore."
 ---
 
-<section class="hero" style="padding:60px 0;">
+<section class="hero hero-page">
   <div class="hero-inner">
-    <p class="eyebrow" style="color:var(--color-white);opacity:0.8;">Contact</p>
-    <h1 style="color:var(--color-white);">Get in Touch</h1>
+    <p class="eyebrow">Contact</p>
+    <h1>Get in Touch</h1>
     <p class="hero-tagline">The fastest way to reach us is WhatsApp — message us any time.</p>
     {% include cta-whatsapp.html text="Message Us on WhatsApp" class="btn-lg" %}
   </div>

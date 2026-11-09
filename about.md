@@ -4,10 +4,11 @@ title: About
 description: "Learn about Aistear's mission, values, and approach to Islamic education for children in Lahore."
 ---
 
-<section class="hero hero-page">
+<section class="hero hero-page has-bg">
+  <img class="hero-bg" src="{{ '/assets/img/Story.jpeg' | relative_url }}" alt="" aria-hidden="true">
   <div class="hero-inner">
-    <p class="eyebrow" style="color:var(--color-white);opacity:0.8;">About Us</p>
-    <h1 style="color:var(--color-white);">Our Story</h1>
+    <p class="eyebrow">About Us</p>
+    <h1>Our Story</h1>
   </div>
 </section>
 
@@ -20,7 +21,7 @@ description: "Learn about Aistear's mission, values, and approach to Islamic edu
 
   <!-- CLIENT TODO (brief §10/§8): replace this paragraph with the client's final
        mission/vision copy ("Our Aistear Story") once supplied. -->
-  <p>Our approach brings together certified educators, child-led pedagogy, and a curriculum that spans Quran, character, expression, and inquiry — six streams, one journey, built around the children of Lahore.</p>
+  <p>Our approach brings together certified educators, child-led pedagogy, and a curriculum that spans Quran, character, expression, and inquiry — four streams, one journey, built around the children of Lahore.</p>
 
   <!-- CLIENT TODO (brief §8): confirm accreditation/affiliations to feature here, if any. -->
 </div>
@@ -83,7 +84,7 @@ description: "Learn about Aistear's mission, values, and approach to Islamic edu
 <section style="text-align:center;">
   <div class="container">
     <h2>Want to Learn More About Our Programs?</h2>
-    <p style="max-width:520px;margin:0 auto 26px;color:var(--color-grey-mid);">Explore our six streams or reach out on WhatsApp with any questions.</p>
+    <p style="max-width:520px;margin:0 auto 26px;color:var(--color-grey-mid);">Explore our four streams or reach out on WhatsApp with any questions.</p>
     {% include cta-whatsapp.html text="Chat with Us on WhatsApp" class="btn-lg" %}
   </div>
 </section>

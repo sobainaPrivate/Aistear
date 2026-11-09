@@ -1,7 +1,5 @@
 ---
-slug: tarteel
-title: Tarteel
-description: "Tarteel — our Hifdh program using the Mauritanian Method. Memorization, loah writing, and reflective tafseer."
+layout: redirect
+redirect_to: /programs/quran/
+sitemap: false
 ---
-
-<p>Tarteel is our dedicated Hifdh (memorization) program, built on the Mauritanian Method — a structured approach that pairs steady memorization with loah (slate) writing and reflective tafseer, so children don't just memorize the Quran but grow to understand and connect with it.</p>
